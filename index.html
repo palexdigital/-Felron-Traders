@@ -43,7 +43,9 @@
     <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm">
         <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
             <a href="#" class="flex items-center space-x-3 group">
-                <img src="logo.jpg" alt="Felron Traders Logo" class="h-12 w-auto object-contain">
+                <div class="w-12 h-12 rounded-full overflow-hidden border border-slate-200 bg-slate-50 flex items-center justify-center shrink-0">
+                    <img src="logo.jpg" alt="Felron Traders Logo" class="w-full h-full object-cover">
+                </div>
                 <div class="flex flex-col">
                     <span class="text-lg font-extrabold tracking-tight text-slate-900 uppercase leading-none">Felron <span class="text-amber-600 font-medium">Traders</span></span>
                     <span class="text-[10px] tracking-widest text-slate-500 font-semibold uppercase mt-1">Procure • Sell • Supply</span>
@@ -61,32 +63,34 @@
             <div class="flex items-center space-x-3">
                 <a href="https://wa.me/263788160616" target="_blank" class="bg-emerald-600 hover:bg-emerald-700 text-white p-2 rounded-md shadow-sm transition text-sm flex items-center justify-center" aria-label="Chat on WhatsApp">
                     <i class="fab fa-whatsapp"></i>
-                </button>
+                </a>
                 <a href="#quote" class="bg-slate-900 hover:bg-amber-600 text-white px-5 py-2.5 rounded-md font-semibold text-xs tracking-wider uppercase transition shadow-sm">Get A Quote</a>
             </div>
         </div>
     </header>
 
-    <section class="relative bg-slate-950 text-white h-[75vh] min-h-[500px] flex items-center overflow-hidden">
-        <video autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover mix-blend-overlay opacity-30">
+    <section class="relative bg-slate-900 text-white h-[75vh] min-h-[500px] flex items-center overflow-hidden">
+        <video autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover z-0">
             <source src="hero.mp4" type="video/mp4">
         </video>
 
-        <div class="relative z-10 max-w-5xl mx-auto px-6 space-y-6">
+        <div class="absolute inset-0 bg-black/30 z-10"></div>
+
+        <div class="relative z-20 max-w-5xl mx-auto px-6 space-y-6">
             <span class="inline-block bg-amber-600 text-white text-[10px] font-bold tracking-widest uppercase px-3.5 py-1.5 rounded-sm shadow-sm">High-Volume Corporate Supply & Logistics</span>
-            <h1 class="text-3xl sm:text-5xl md:text-6xl font-extrabold tracking-tight leading-tight max-w-4xl">
-                Dependable Procurement Sourcing & General Trading Across <span class="text-amber-500">Zimbabwe</span>
+            <h1 class="text-3xl sm:text-5xl md:text-6xl font-extrabold tracking-tight leading-tight max-w-4xl text-white drop-shadow-md">
+                Dependable Procurement Sourcing & General Trading Across <span class="text-amber-400">Zimbabwe</span>
             </h1>
-            <p class="text-base md:text-lg text-slate-300 max-w-2xl font-light leading-relaxed">
+            <p class="text-base md:text-lg text-slate-100 max-w-2xl font-normal leading-relaxed drop-shadow-sm">
                 Felron Traders (Private) Limited bridges global supply chains with local Zimbabwean industry lines. We provide dependable procurement services and top-quality goods supporting construction, healthcare, engineering, and industrial development.
             </p>
             <div class="pt-4 flex flex-wrap gap-4">
                 <a href="#categories" class="bg-amber-600 text-white px-8 py-3.5 rounded-sm font-semibold text-xs tracking-wider uppercase shadow-md hover:bg-amber-700 transition">Browse Products</a>
-                <a href="#quote" class="bg-white/10 border border-white/20 text-white px-8 py-3.5 rounded-sm font-semibold text-xs tracking-wider uppercase hover:bg-white/20 transition">Request Procurement Quote</a>
+                <a href="#quote" class="bg-white/20 border border-white/30 backdrop-blur-xs text-white px-8 py-3.5 rounded-sm font-semibold text-xs tracking-wider uppercase hover:bg-white/30 transition">Request Procurement Quote</a>
             </div>
         </div>
 
-        <div class="absolute bottom-0 inset-x-0 h-1 bg-gradient-to-r from-amber-600 to-slate-900"></div>
+        <div class="absolute bottom-0 inset-x-0 h-1 bg-gradient-to-r from-amber-600 to-slate-900 z-20"></div>
     </section>
 
     <section class="bg-slate-50 border-b border-slate-200 py-8">
@@ -394,7 +398,7 @@
         </div>
     </section>
 
-    <section id="contact" class="grid grid-cols-1 lg:grid-cols-2 bg-slate-50 border-t border-b border-slate-200">
+    <section id="contact" class="grid grid-cols-1 lg:grid-cols-2 bg-slate-50 border-t border-b border-slate-200 items-stretch">
         <div class="p-8 md:p-16 space-y-8 flex flex-col justify-center">
             <div>
                 <span class="text-[10px] font-bold text-amber-600 uppercase tracking-widest block mb-2">Global Axis</span>
@@ -432,10 +436,10 @@
             </div>
         </div>
 
-        <div class="w-full h-96 lg:h-auto min-h-[350px] relative">
+        <div class="w-full min-h-[380px] lg:h-auto relative">
             <iframe 
                 class="absolute inset-0 w-full h-full border-0 grayscale opacity-85"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3798.541459424729!2d31.045610275988585!3d-17.813295876642735!2m3!1f0!2f0!3f0!2m3!1i1024!2i768!4m3!3m1!2b1!5m2!1sen!2szw" 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3798.2435478496417!2d31.045618475988514!3d-17.827150176840748!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1931a4e6628b0873%3A0x27fc9081bb5ef6e5!2sMontagu%20Shopping%20Centre%2C%20Josiah%20Chinamano%20Ave%2C%20Harare%2C%20Zimbabwe!5e0!3m2!1sen!2sza!4v1719790000000!5m2!1sen!2sza" 
                 allowfullscreen="" 
                 loading="lazy" 
                 referrerpolicy="no-referrer-when-downgrade"
@@ -497,7 +501,7 @@
 
         <div class="max-w-7xl mx-auto px-6 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-slate-600">
             <div>
-                &copy; 2026 Felron Traders (Private) Limited. All rights reserved.
+                © 2026 Felron Traders (Private) Limited. All rights reserved.
             </div>
             <div class="font-medium tracking-wide">
                 <a href="https://palexdigital.pages.dev/" target="_blank" class="hover:text-amber-500 transition duration-150">
