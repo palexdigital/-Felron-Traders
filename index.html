@@ -23,6 +23,67 @@
         .brand-gold { color: #d97706; }
         .bg-brand-gold { background-color: #d97706; }
         .border-brand-gold { border-color: #d97706; }
+
+        /* Requested CSS for the burger menu icon */
+        .burger {
+            position: relative;
+            width: 40px;
+            height: 30px;
+            background: transparent;
+            cursor: pointer;
+            display: block;
+        }
+
+        .burger input {
+            display: none;
+        }
+
+        .burger span {
+            display: block;
+            position: absolute;
+            height: 4px;
+            width: 100%;
+            background: black;
+            border-radius: 9px;
+            opacity: 1;
+            left: 0;
+            transform: rotate(0deg);
+            transition: .25s ease-in-out;
+        }
+
+        .burger span:nth-of-type(1) {
+            top: 0px;
+            transform-origin: left center;
+        }
+
+        .burger span:nth-of-type(2) {
+            top: 50%;
+            transform: translateY(-50%);
+            transform-origin: left center;
+        }
+
+        .burger span:nth-of-type(3) {
+            top: 100%;
+            transform-origin: left center;
+            transform: translateY(-100%);
+        }
+
+        .burger input:checked ~ span:nth-of-type(1) {
+            transform: rotate(45deg);
+            top: 0px;
+            left: 5px;
+        }
+
+        .burger input:checked ~ span:nth-of-type(2) {
+            width: 0%;
+            opacity: 0;
+        }
+
+        .burger input:checked ~ span:nth-of-type(3) {
+            transform: rotate(-45deg);
+            top: 28px;
+            left: 5px;
+        }
     </style>
 </head>
 <body class="antialiased">
@@ -43,9 +104,12 @@
     <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm">
         <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between relative">
             <div class="flex items-center">
-                <button onclick="toggleMobileMenu()" class="text-slate-700 hover:text-amber-600 focus:outline-none p-2 rounded-md transition" aria-label="Toggle Navigation Menu">
-                    <i class="fas fa-bars text-xl"></i>
-                </button>
+                <label class="burger" for="burger">
+                    <input type="checkbox" id="burger" onchange="toggleMobileMenu()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </label>
             </div>
 
             <a href="#" class="flex items-center space-x-3 group absolute left-1/2 -translate-x-1/2">
@@ -65,11 +129,11 @@
 
         <div id="mobile-navigation-portal" class="hidden bg-white border-b border-slate-200">
             <nav class="max-w-7xl mx-auto px-6 py-4 flex flex-col space-y-4 text-xs font-semibold tracking-wider uppercase text-slate-600">
-                <a href="#" onclick="toggleMobileMenu()" class="hover:text-amber-600 transition">Home</a>
-                <a href="#about" onclick="toggleMobileMenu()" class="hover:text-amber-600 transition">About Us</a>
-                <a href="#categories" onclick="toggleMobileMenu()" class="hover:text-amber-600 transition">Product Portfolio</a>
-                <a href="#how-it-works" onclick="toggleMobileMenu()" class="hover:text-amber-600 transition">Procurement Process</a>
-                <a href="#contact" onclick="toggleMobileMenu()" class="hover:text-amber-600 transition">Contact Hub</a>
+                <a href="#" onclick="closeMobileMenu()" class="hover:text-amber-600 transition">Home</a>
+                <a href="#about" onclick="closeMobileMenu()" class="hover:text-amber-600 transition">About Us</a>
+                <a href="#categories" onclick="closeMobileMenu()" class="hover:text-amber-600 transition">Product Portfolio</a>
+                <a href="#how-it-works" onclick="closeMobileMenu()" class="hover:text-amber-600 transition">Procurement Process</a>
+                <a href="#contact" onclick="closeMobileMenu()" class="hover:text-amber-600 transition">Contact Hub</a>
             </nav>
         </div>
     </header>
@@ -262,8 +326,8 @@
 
             <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div class="bg-slate-950 rounded-lg overflow-hidden border border-slate-800 shadow-md">
-                    <div class="w-full h-44 bg-slate-800 flex items-center justify-center">
-                        <i class="fas fa-user-tie text-slate-600 text-5xl"></i>
+                    <div class="w-full h-44 bg-slate-800">
+                        <img src="image09.jpg" alt="Khohliso Felix Makovere" class="w-full h-full object-cover">
                     </div>
                     <div class="p-4">
                         <h4 class="text-xs font-bold text-white tracking-wide">Khohliso Felix Makovere</h4>
@@ -271,8 +335,8 @@
                     </div>
                 </div>
                 <div class="bg-slate-950 rounded-lg overflow-hidden border border-slate-800 shadow-md">
-                    <div class="w-full h-44 bg-slate-800 flex items-center justify-center">
-                        <i class="fas fa-user-tie text-slate-600 text-5xl"></i>
+                    <div class="w-full h-44 bg-slate-800">
+                        <img src="image10.jpg" alt="Flemming Samuel Gore" class="w-full h-full object-cover">
                     </div>
                     <div class="p-4">
                         <h4 class="text-xs font-bold text-white tracking-wide">Flemming Samuel Gore</h4>
@@ -520,12 +584,25 @@
     </a>
 
     <script>
-        // Toggle Mobile Navigation Portal View
+        // Toggle Mobile Navigation Portal View from checkbox state change
         function toggleMobileMenu() {
+            const checkbox = document.getElementById('burger');
             const portal = document.getElementById('mobile-navigation-portal');
-            if (portal) {
-                portal.classList.toggle('hidden');
+            if (portal && checkbox) {
+                if (checkbox.checked) {
+                    portal.classList.remove('hidden');
+                } else {
+                    portal.classList.add('hidden');
+                }
             }
+        }
+
+        // Close portal menu when a direct context link link is clicked and clear state
+        function closeMobileMenu() {
+            const checkbox = document.getElementById('burger');
+            const portal = document.getElementById('mobile-navigation-portal');
+            if (checkbox) checkbox.checked = false;
+            if (portal) portal.classList.add('hidden');
         }
 
         // Automatic category selection router linking lists directly into the input nodes
