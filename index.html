@@ -41,8 +41,14 @@
     </div>
 
     <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm">
-        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-            <a href="#" class="flex items-center space-x-3 group">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between relative">
+            <div class="flex items-center">
+                <button onclick="toggleMobileMenu()" class="text-slate-700 hover:text-amber-600 focus:outline-none p-2 rounded-md transition" aria-label="Toggle Navigation Menu">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+
+            <a href="#" class="flex items-center space-x-3 group absolute left-1/2 -translate-x-1/2">
                 <div class="w-12 h-12 rounded-full overflow-hidden border border-slate-200 bg-slate-50 flex items-center justify-center shrink-0">
                     <img src="logo.jpg" alt="Felron Traders Logo" class="w-full h-full object-cover">
                 </div>
@@ -52,17 +58,19 @@
                 </div>
             </a>
 
-            <nav class="hidden md:flex space-x-8 text-xs font-semibold tracking-wider uppercase text-slate-600">
-                <a href="#" class="hover:text-amber-600 transition">Home</a>
-                <a href="#about" class="hover:text-amber-600 transition">About Us</a>
-                <a href="#categories" class="hover:text-amber-600 transition">Product Portfolio</a>
-                <a href="#how-it-works" class="hover:text-amber-600 transition">Procurement Process</a>
-                <a href="#contact" class="hover:text-amber-600 transition">Contact Hub</a>
-            </nav>
-
-            <div class="flex items-center space-x-3">
+            <div class="flex items-center space-x-3 z-10">
                 <a href="#quote" class="bg-slate-900 hover:bg-amber-600 text-white px-5 py-2.5 rounded-md font-semibold text-xs tracking-wider uppercase transition shadow-sm">Get A Quote</a>
             </div>
+        </div>
+
+        <div id="mobile-navigation-portal" class="hidden bg-white border-b border-slate-200">
+            <nav class="max-w-7xl mx-auto px-6 py-4 flex flex-col space-y-4 text-xs font-semibold tracking-wider uppercase text-slate-600">
+                <a href="#" onclick="toggleMobileMenu()" class="hover:text-amber-600 transition">Home</a>
+                <a href="#about" onclick="toggleMobileMenu()" class="hover:text-amber-600 transition">About Us</a>
+                <a href="#categories" onclick="toggleMobileMenu()" class="hover:text-amber-600 transition">Product Portfolio</a>
+                <a href="#how-it-works" onclick="toggleMobileMenu()" class="hover:text-amber-600 transition">Procurement Process</a>
+                <a href="#contact" onclick="toggleMobileMenu()" class="hover:text-amber-600 transition">Contact Hub</a>
+            </nav>
         </div>
     </header>
 
@@ -76,7 +84,7 @@
         <div class="relative z-20 max-w-5xl mx-auto px-6 space-y-6">
             <span class="inline-block bg-amber-600 text-white text-[10px] font-bold tracking-widest uppercase px-3.5 py-1.5 rounded-sm shadow-sm">High-Volume Corporate Supply & Logistics</span>
             <h1 class="text-3xl sm:text-5xl md:text-6xl font-extrabold tracking-tight leading-tight max-w-4xl text-white drop-shadow-md">
-                Dependable Procurement Sourcing & General Trading Across <span class="inline-flex"><span class="text-emerald-500">Zim</span><span class="text-amber-400">bab</span><span class="text-red-500">we</span></span>
+                Dependable Procurement Sourcing & General Trading Across <span class="text-amber-600">Zimbabwe</span>
             </h1>
             <p class="text-base md:text-lg text-slate-100 max-w-2xl font-normal leading-relaxed drop-shadow-sm">
                 Felron Traders (Private) Limited bridges global supply chains with local Zimbabwean industry lines. We provide dependable procurement services and top-quality goods supporting construction, healthcare, engineering, and industrial development.
@@ -235,10 +243,10 @@
     <section class="py-20 bg-slate-900 text-white">
         <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <div class="lg:col-span-5 space-y-6">
-                <span class="text-[10px] font-bold text-amber-500 uppercase tracking-widest block">Operational Sourcing Capacity</span>
-                <h2 class="text-3xl font-extrabold tracking-tight">Verified Logistics & Warehouse Sourcing Channels</h2>
+                <span class="text-[10px] font-bold text-amber-500 uppercase tracking-widest block">Leadership Team</span>
+                <h2 class="text-3xl font-extrabold tracking-tight">Meet Our Directors</h2>
                 <p class="text-slate-400 font-light text-xs leading-relaxed">
-                    Watch our field operations and logistics coordination. We focus on minimizing your procurement cycle delays by maintaining verified pathways directly with global distribution lines.
+                    Our corporate operations and strategic pathways are structured under verified professional leadership, driving reliable procurement across regional networks.
                 </p>
                 <div class="grid grid-cols-2 gap-4 pt-2">
                     <div class="border-l-2 border-amber-500 pl-4">
@@ -254,21 +262,21 @@
 
             <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div class="bg-slate-950 rounded-lg overflow-hidden border border-slate-800 shadow-md">
-                    <video autoplay loop muted playsinline class="w-full h-44 object-cover">
-                        <source src="video01.mp4" type="video/mp4">
-                    </video>
+                    <div class="w-full h-44 bg-slate-800 flex items-center justify-center">
+                        <i class="fas fa-user-tie text-slate-600 text-5xl"></i>
+                    </div>
                     <div class="p-4">
-                        <h4 class="text-xs font-bold text-white tracking-wide">Bulk Sourcing Verification</h4>
-                        <p class="text-[10px] text-slate-400 mt-1 font-light">Verification of freight lines and product handling protocols.</p>
+                        <h4 class="text-xs font-bold text-white tracking-wide">Khohliso Felix Makovere</h4>
+                        <p class="text-[10px] text-slate-400 mt-1 font-light">felixmakovere@gmail.com</p>
                     </div>
                 </div>
                 <div class="bg-slate-950 rounded-lg overflow-hidden border border-slate-800 shadow-md">
-                    <video autoplay loop muted playsinline class="w-full h-44 object-cover">
-                        <source src="video02.mp4" type="video/mp4">
-                    </video>
+                    <div class="w-full h-44 bg-slate-800 flex items-center justify-center">
+                        <i class="fas fa-user-tie text-slate-600 text-5xl"></i>
+                    </div>
                     <div class="p-4">
-                        <h4 class="text-xs font-bold text-white tracking-wide">Supply Network Overview</h4>
-                        <p class="text-[10px] text-slate-400 mt-1 font-light">Managing delivery systems into industrial hubs in Harare.</p>
+                        <h4 class="text-xs font-bold text-white tracking-wide">Flemming Samuel Gore</h4>
+                        <p class="text-[10px] text-slate-400 mt-1 font-light">flemiflemming@outlook.com</p>
                     </div>
                 </div>
             </div>
@@ -410,7 +418,7 @@
                     <div class="w-6 h-6 md:w-8 md:h-8 rounded bg-slate-900 text-amber-500 flex items-center justify-center shrink-0 text-xs"><i class="fas fa-map-marker-alt"></i></div>
                     <div>
                         <h4 class="font-bold text-slate-900">Physical Corporate Headquarters</h4>
-                        <p class="text-slate-500 mt-0.5 font-light">1 Montague Flats, Avenues, Harare, Zimbabwe</p>
+                        <p class="text-slate-500 mt-0.5 font-light">Location :1 Montague flats,6 Josiah chinamano,avenues ,Harare Zimbabwe.</p>
                     </div>
                 </div>
                 <div class="flex items-start gap-2 md:gap-4">
@@ -437,7 +445,7 @@
         <div class="w-full min-h-[250px] lg:h-auto relative">
             <iframe 
                 class="absolute inset-0 w-full h-full border-0 grayscale opacity-85"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3798.2435478496417!2d31.045618475988514!3d-17.827150176840748!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1931a4e6628b0873%3A0x27fc9081bb5ef6e5!2sMontagu%20Shopping%20Centre%2C%20Josiah%20Chinamano%20Ave%2C%20Harare%2C%20Zimbabwe!5e0!3m2!1sen!2sza!4v1719790000000!5m2!1sen!2sza" 
+                src="https://maps.google.com/maps?q=1%20Montague%20flats,6%20Josiah%20chinamano,avenues%20,Harare%20Zimbabwe&t=&z=15&ie=UTF8&iwloc=&output=embed" 
                 allowfullscreen="" 
                 loading="lazy" 
                 referrerpolicy="no-referrer-when-downgrade"
@@ -486,9 +494,7 @@
             <div>
                 <h4 class="font-bold text-white uppercase tracking-wider mb-4 text-[11px]">Office Data Axis</h4>
                 <p class="font-light text-slate-400 leading-relaxed mb-3">
-                    1 Montague Flats,<br>
-                    Avenues, Harare,<br>
-                    Zimbabwe
+                    Location :1 Montague flats,6 Josiah chinamano,avenues ,Harare Zimbabwe.
                 </p>
                 <div class="space-y-1 font-medium text-slate-300">
                     <span class="block"><i class="fas fa-phone mr-2 brand-gold"></i>+263 788 160 616</span>
@@ -509,11 +515,19 @@
         </div>
     </footer>
 
-    <a href="https://wa.me/263788160616" target="_blank" class="fixed bottom-6 right-6 bg-emerald-600 hover:bg-emerald-700 text-white w-12 h-12 rounded-full shadow-lg transition flex items-center justify-center text-xl z-50 animate-bounce" aria-label="Chat on WhatsApp">
+    <a href="https://wa.me/447472541287" target="_blank" class="fixed bottom-6 right-6 bg-emerald-600 hover:bg-emerald-700 text-white w-12 h-12 rounded-full shadow-lg transition flex items-center justify-center text-xl z-50 animate-bounce" aria-label="Chat on WhatsApp">
         <i class="fab fa-whatsapp"></i>
     </a>
 
     <script>
+        // Toggle Mobile Navigation Portal View
+        function toggleMobileMenu() {
+            const portal = document.getElementById('mobile-navigation-portal');
+            if (portal) {
+                portal.classList.toggle('hidden');
+            }
+        }
+
         // Automatic category selection router linking lists directly into the input nodes
         function selectCategory(categoryName) {
             const selectElement = document.getElementById('form-category');
@@ -524,19 +538,28 @@
             }
         }
 
-        // Secure simulation form handler system answering prompt criteria
+        // Secure simulation form handler system answering prompt criteria and routing to WhatsApp link generation
         function handleQuoteSubmit(event) {
             event.preventDefault();
             
             const name = document.getElementById('form-name').value;
+            const company = document.getElementById('form-company').value || 'Not Specified';
+            const email = document.getElementById('form-email').value;
+            const phone = document.getElementById('form-phone').value;
             const category = document.getElementById('form-category').value;
-            const statusBox = document.getElementById('form-status');
+            const details = document.getElementById('form-details').value;
 
+            // Generate structured WhatsApp corporate link template parameters
+            const textMessage = `Felron Traders Quote Request:\n\nName: ${name}\nCompany: ${company}\nEmail: ${email}\nPhone: ${phone}\nCategory: ${category}\nDetails: ${details}`;
+            const encodedText = encodeURIComponent(textMessage);
+            
+            // Redirect live straight onto the direct messaging target array
+            window.open(`https://wa.me/447472541287?text=${encodedText}`, '_blank');
+            
+            const statusBox = document.getElementById('form-status');
             if(statusBox) {
-                statusBox.innerHTML = `Thank you, ${name}. Your procurement enquiry regarding "${category}" has been registered successfully. Our Harare sourcing managers will send a professional quote shortly.`;
+                statusBox.innerHTML = `Redirecting your enquiry to our official WhatsApp line...`;
                 statusBox.classList.remove('hidden');
-                
-                // Refresh standard criteria variables smoothly
                 event.target.reset();
             }
         }
